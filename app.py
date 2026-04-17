@@ -194,33 +194,51 @@ st.markdown("""
     /* 1. Fundo da página sempre branco */
     .stApp { background-color: white !important; }
 
-    /* 2. Todos os textos principais em PRETO bem forte */
-    .stMarkdown p, label, .stSelectbox label, .stMultiSelect label, .stCheckbox label, .stRadio label {
-        color: black !important;
-        font-weight: 600 !important;
+    /* 2. Forçar cor PRETA em todos os textos de seleção e rádio */
+    /* Isso resolve o Tamanho, Salada e Ovo */
+    .stMarkdown p, 
+    label, 
+    .stSelectbox label, 
+    .stMultiSelect label, 
+    .stCheckbox label, 
+    .stRadio label,
+    div[data-testid="stMarkdownContainer"] p {
+        color: #000000 !important;
+        font-weight: 800 !important; /* Deixa a letra mais grossa */
+        font-size: 1.1rem !important;
     }
 
-    /* 3. Ajuste das caixas de seleção (Choose options) */
+    /* 3. Ajuste específico para as bolinhas do rádio e quadrados do check */
+    div[data-testid="stRadio"] label p, 
+    div[data-testid="stCheckbox"] label p {
+        color: #000000 !important;
+    }
+
+    /* 4. Caixas de seleção (Proteínas e Acompanhamentos) */
     div[data-baseweb="select"] > div {
         background-color: #f0f2f6 !important;
-        color: black !important;
-        border: 1px solid #d1d1d1 !important;
+        border: 2px solid #000000 !important; /* Borda preta para destacar */
+    }
+    
+    /* Texto dentro da caixa de seleção */
+    div[data-baseweb="select"] div {
+        color: #000000 !important;
     }
 
-    /* 4. Cor do texto digitado e das opções dentro da lista */
-    div[data-baseweb="select"] span, div[role="listbox"] div {
-        color: black !important;
+    /* 5. Títulos em Vermelho Destaque */
+    h1, h2, h3 { 
+        color: #EA1D2C !important; 
+        font-weight: bold !important;
     }
 
-    /* 5. Títulos em Vermelho */
-    h1, h2, h3 { color: #EA1D2C !important; }
-
-    /* 6. Botão de Finalizar */
+    /* 6. Botão Finalizar */
     .stButton>button {
         background-color: #EA1D2C !important;
         color: white !important;
         width: 100%;
         font-weight: bold;
+        border-radius: 10px;
+        height: 3em;
     }
     </style>
     """, unsafe_allow_html=True)
