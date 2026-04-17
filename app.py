@@ -189,3 +189,27 @@ st.markdown("""
     input { background-color: #f0f2f6 !important; color: black !important; }
     </style>
     """, unsafe_allow_html=True)
+st.markdown("""
+    <style>
+    /* Fundo geral branco */
+    .stApp { background-color: white !important; }
+    
+    /* Títulos em Vermelho */
+    h1, h2, h3, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3 { color: #EA1D2C !important; }
+    
+    /* Textos e Labels em Preto */
+    .stMarkdown p, label, .stRadio label, .stCheckbox label { color: black !important; font-weight: bold; }
+    
+    /* Ajuste das caixas de seleção (Choose options) */
+    div[data-baseweb="select"] > div { background-color: #f0f2f6 !important; }
+    div[role="listbox"] { background-color: white !important; }
+    span[data-baseweb="tag"] { background-color: #EA1D2C !important; color: white !important; }
+    
+    /* Botão Finalizar */
+    .stButton>button {
+        background-color: #EA1D2C !important;
+        color: white !important;
+        border: none !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
