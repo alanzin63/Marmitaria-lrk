@@ -179,3 +179,13 @@ with aba_admin:
                 conn.commit()
                 st.rerun()
         conn.close()
+        # FORÇAR MODO CLARO PARA NÃO FICAR ESCURO NO CELULAR
+st.markdown("""
+    <style>
+    [data-testid="stAppViewContainer"] { background-color: white; }
+    [data-testid="stHeader"] { background-color: rgba(0,0,0,0); }
+    .stMarkdown p, label, .stRadio label { color: black !important; }
+    h1, h2, h3 { color: #EA1D2C !important; }
+    input { background-color: #f0f2f6 !important; color: black !important; }
+    </style>
+    """, unsafe_allow_html=True)
