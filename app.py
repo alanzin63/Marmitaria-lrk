@@ -191,25 +191,36 @@ st.markdown("""
     """, unsafe_allow_html=True)
 st.markdown("""
     <style>
-    /* Fundo geral branco */
+    /* 1. Fundo da página sempre branco */
     .stApp { background-color: white !important; }
-    
-    /* Títulos em Vermelho */
-    h1, h2, h3, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3 { color: #EA1D2C !important; }
-    
-    /* Textos e Labels em Preto */
-    .stMarkdown p, label, .stRadio label, .stCheckbox label { color: black !important; font-weight: bold; }
-    
-    /* Ajuste das caixas de seleção (Choose options) */
-    div[data-baseweb="select"] > div { background-color: #f0f2f6 !important; }
-    div[role="listbox"] { background-color: white !important; }
-    span[data-baseweb="tag"] { background-color: #EA1D2C !important; color: white !important; }
-    
-    /* Botão Finalizar */
+
+    /* 2. Todos os textos principais em PRETO bem forte */
+    .stMarkdown p, label, .stSelectbox label, .stMultiSelect label, .stCheckbox label, .stRadio label {
+        color: black !important;
+        font-weight: 600 !important;
+    }
+
+    /* 3. Ajuste das caixas de seleção (Choose options) */
+    div[data-baseweb="select"] > div {
+        background-color: #f0f2f6 !important;
+        color: black !important;
+        border: 1px solid #d1d1d1 !important;
+    }
+
+    /* 4. Cor do texto digitado e das opções dentro da lista */
+    div[data-baseweb="select"] span, div[role="listbox"] div {
+        color: black !important;
+    }
+
+    /* 5. Títulos em Vermelho */
+    h1, h2, h3 { color: #EA1D2C !important; }
+
+    /* 6. Botão de Finalizar */
     .stButton>button {
         background-color: #EA1D2C !important;
         color: white !important;
-        border: none !important;
+        width: 100%;
+        font-weight: bold;
     }
     </style>
     """, unsafe_allow_html=True)
